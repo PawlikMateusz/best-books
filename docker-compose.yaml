@@ -22,6 +22,12 @@ services:
     container_name: service2
     depends_on:
       - db
+
+  users-service: 
+    build: ./services/backend/users
+    container_name: users-service
+    environment:
+      - PORT=80
   
   db:
     image: mongo:latest
